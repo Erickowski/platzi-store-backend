@@ -1,0 +1,25 @@
+language: node_js
+cache:
+  directories:
+    - node_modules
+    - ~/.npm
+node_js:
+  - '12'
+git:
+  depth: 3
+script:
+  - yarn test
+notifications:
+  email:
+    reciepients:
+      - erickdanielperezmata@outlook.es
+    on_success: always
+    on_failure: always
+deploy:
+  provide: heroku
+  skip-cleanup: true
+  keep-history: true
+  api-key: adde4ebf-999c-4943-8624-9450fdc7ee1f
+  app: backend-platzi-store
+  on:
+    repo: erickowski/platzi-store-backend
